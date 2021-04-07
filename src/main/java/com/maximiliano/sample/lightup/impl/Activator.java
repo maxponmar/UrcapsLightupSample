@@ -1,0 +1,24 @@
+package com.maximiliano.sample.lightup.impl;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+/**
+ * Hello world activator for the OSGi bundle URCAPS contribution
+ *
+ */
+public class Activator implements BundleActivator {
+	// Called when Polyscope is up
+	@Override
+	public void start(BundleContext bundleContext) throws Exception {
+		System.out.println("Lightup Registerings");
+		bundleContext.registerService(LightupService.class, new LightupService(), null);
+	}
+
+	// Called when Polyscope is down
+	@Override
+	public void stop(BundleContext bundleContext) throws Exception {
+		System.out.println("Activator says Goodbye World!");
+	}
+}
+
